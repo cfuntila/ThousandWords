@@ -12,9 +12,12 @@
 #import <CoreML/CoreML.h>
 #import <Vision/Vision.h>
 
+
 @interface ViewController ()
 
 @end
+
+
 
 @implementation ViewController
 
@@ -25,30 +28,31 @@
     [self.imageTitle setText:@"No image selected"];
     self.imageTitle.textAlignment = NSTextAlignmentCenter;
     [self.imageTitle setAccessibilityLabel:@"Welcome, use the camera button below to begin"];
-
-
+    self.imageTitle.lineBreakMode = UILineBreakModeWordWrap;
+    self.imageTitle.numberOfLines = 0;
+    [self.imageTitle sizeToFit];
 }
+
+- (IBAction)openGallery:(id)sender {
+    NSLog(@"Open Gallery button is pressed!");
+//    [self openGalleryNow];
+    
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    //picker.mediaTypes = [[NSArray alloc] initWithObjects:(NSString *)kUTTypeMovie,kUTTypeImage,nil];
+
+    picker.delegate = self;
+    picker.editing = YES;
+    picker.allowsEditing = YES;
+
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    [self presentViewController:picker animated:YES completion:NULL];
+     }
+
 
 // camera button
 - (IBAction)openCamera:(id)sender {
     NSLog(@"Camera button is pressed!");
     [self takePhoto];
-}
-
-- (IBAction)openGallery:(id)sender {
-    NSLog(@"Open Gallery button is pressed!");
-    [self openGalleryNow];
-     }
-
-- (void) openGalleryNow {
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-             picker.delegate = self;
-             picker.allowsEditing = NO;
-             picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-     
-             
-             [self presentViewController:picker animated:YES completion:NULL];
-    
 }
 
 
@@ -68,9 +72,12 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
 
     UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
+    if (chosenImage == NULL){
+        printf("image is null!");
+    }
     CIImage* myImageCI = [[CIImage alloc] initWithCGImage:chosenImage.CGImage];
     self.image.image = chosenImage;
-    self.imageTitle.text = @"Processing image...";
+    self.imageTitle.text = @"Processing...";
     
     //image processing
     [self processImage: myImageCI];

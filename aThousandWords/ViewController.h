@@ -14,12 +14,14 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *openCamera;
 @property (weak, nonatomic) IBOutlet UILabel *imageTitle;
-@property (weak, nonatomic) IBOutlet UIImageView *image;
 @property (weak, nonatomic) IBOutlet UIButton *openGallery;
+@property (weak, nonatomic) IBOutlet UIImageView *image;
 
+
+- (IBAction)openGallery:(id)sender;
 - (void)takePhoto;
-- (void)openGalleryNow;
 - (void)imagePickerController:(UIImagePickerController *)picker;
+
 
 @end
 

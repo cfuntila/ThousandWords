@@ -15,59 +15,76 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTS-sC-ow7">
-                                <rect key="frame" x="27" y="157" width="360" height="78"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="78" id="wXP-MP-76i"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nosign" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1Uj-gw-qMd">
-                                <rect key="frame" x="27" y="273.5" width="360" height="349"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.down" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3Py-SZ-zi2">
+                                <rect key="frame" x="24" y="226" width="366" height="444"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="79" translatesAutoresizingMaskIntoConstraints="NO" id="K0B-PM-nd7">
-                                <rect key="frame" x="52.5" y="755" width="309" height="50"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="nhM-sJ-lvv">
+                                <rect key="frame" x="20" y="730" width="374" height="70"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5nD-JA-uYe">
-                                        <rect key="frame" x="0.0" y="1" width="128" height="48"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="174.5" height="70"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <state key="normal" title="GALLERY"/>
+                                        <inset key="titleEdgeInsets" minX="1" minY="1" maxX="1" maxY="1"/>
+                                        <state key="normal" title="Gallery">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="openGallery:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Qf-Kg-g2t"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRS-dO-oyE">
-                                        <rect key="frame" x="207" y="1" width="102" height="48"/>
+                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRS-dO-oyE">
+                                        <rect key="frame" x="199.5" y="0.0" width="174.5" height="70"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <state key="normal" title="Camera"/>
+                                        <inset key="titleEdgeInsets" minX="1" minY="1" maxX="1" maxY="1"/>
+                                        <state key="normal" title="Camera">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="openCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fq1-PQ-nFC"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="gSJ-oP-vq3"/>
+                                    <constraint firstAttribute="height" constant="70" id="bGl-x5-awI"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTS-sC-ow7">
+                                <rect key="frame" x="67" y="90" width="280" height="166"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="1Uj-gw-qMd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="A9Y-3h-faw"/>
-                            <constraint firstItem="1Uj-gw-qMd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BN9-Xe-O0h"/>
-                            <constraint firstItem="MTS-sC-ow7" firstAttribute="leading" secondItem="1Uj-gw-qMd" secondAttribute="leading" id="DCP-Hj-ixC"/>
-                            <constraint firstItem="K0B-PM-nd7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DCw-qi-TnM"/>
-                            <constraint firstItem="MTS-sC-ow7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="113" id="JuH-PI-9bV"/>
-                            <constraint firstItem="1Uj-gw-qMd" firstAttribute="top" secondItem="MTS-sC-ow7" secondAttribute="bottom" constant="38" id="NKd-Nh-ZAm"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="K0B-PM-nd7" secondAttribute="bottom" constant="57" id="bym-Va-EfU"/>
-                            <constraint firstItem="1Uj-gw-qMd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="27" id="lJP-qw-vmg"/>
-                            <constraint firstItem="MTS-sC-ow7" firstAttribute="trailing" secondItem="1Uj-gw-qMd" secondAttribute="trailing" id="uSa-5R-y0r"/>
+                            <constraint firstItem="nhM-sJ-lvv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="1FU-zz-lGZ"/>
+                            <constraint firstItem="MTS-sC-ow7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="46" id="1ZM-CZ-mQL"/>
+                            <constraint firstItem="MTS-sC-ow7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="8W8-EZ-eVr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MTS-sC-ow7" secondAttribute="trailing" constant="67" id="8x6-kB-Pck"/>
+                            <constraint firstItem="nhM-sJ-lvv" firstAttribute="top" secondItem="3Py-SZ-zi2" secondAttribute="bottom" constant="60" id="AfW-y4-sS6"/>
+                            <constraint firstItem="3Py-SZ-zi2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="Pzn-IO-Tj9"/>
+                            <constraint firstItem="3Py-SZ-zi2" firstAttribute="centerX" secondItem="nhM-sJ-lvv" secondAttribute="centerX" id="Vbv-kO-baK"/>
+                            <constraint firstItem="3Py-SZ-zi2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="182" id="cLz-sq-yWx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nhM-sJ-lvv" secondAttribute="trailing" constant="20" id="cq0-mw-hGE"/>
+                            <constraint firstItem="3Py-SZ-zi2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="yrb-9c-ZAo"/>
+                            <constraint firstItem="nhM-sJ-lvv" firstAttribute="top" secondItem="MTS-sC-ow7" secondAttribute="bottom" constant="474" id="ywl-q2-mBn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="image" destination="1Uj-gw-qMd" id="lDo-S9-SSX"/>
+                        <outlet property="image" destination="3Py-SZ-zi2" id="3sJ-No-hof"/>
                         <outlet property="imageTitle" destination="MTS-sC-ow7" id="ZoH-In-0QH"/>
                         <outlet property="openCamera" destination="dRS-dO-oyE" id="XXr-fF-Fds"/>
                         <outlet property="openGallery" destination="5nD-JA-uYe" id="LKw-aA-4y7"/>
@@ -79,6 +96,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="nosign" catalog="system" width="128" height="121"/>
+        <image name="square.and.arrow.down" catalog="system" width="121" height="128"/>
     </resources>
 </document>
