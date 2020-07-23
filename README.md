@@ -1,4 +1,8 @@
 # ThousandWords
+
+## About
+Image recognition applications made with Objective-C. I used the MobileNetV2 model.
+
 <p align="center">
   <img src="demo/demo.gif" width="200">
   
