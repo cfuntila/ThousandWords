@@ -1,7 +1,7 @@
 # ThousandWords
 
 ## About
-Image recognition applications made with Objective-C and using the MobileNetV2 model.
+Image recognition application made with Objective-C and using the MobileNetV2 model.
 
 <p align="center">
   <img src="demo/demo.gif" width="200">
