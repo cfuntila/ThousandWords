@@ -12,33 +12,33 @@
 #import <CoreML/CoreML.h>
 #import <Vision/Vision.h>
 
-
 @interface ViewController ()
 
 @end
-
-
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    // Set default UI options
     [self.openCamera setTitle:@"Camera" forState:UIControlStateNormal];
     [self.imageTitle setText:@"No image selected"];
     self.imageTitle.textAlignment = NSTextAlignmentCenter;
+    
+    // accessibility settings
     [self.imageTitle setAccessibilityLabel:@"Welcome, use the camera button below to begin"];
+    
+    // allow multiline results
     self.imageTitle.lineBreakMode = UILineBreakModeWordWrap;
     self.imageTitle.numberOfLines = 0;
     [self.imageTitle sizeToFit];
 }
 
+// Opens Gallery allows you to chose a photo
 - (IBAction)openGallery:(id)sender {
     NSLog(@"Open Gallery button is pressed!");
-//    [self openGalleryNow];
     
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    //picker.mediaTypes = [[NSArray alloc] initWithObjects:(NSString *)kUTTypeMovie,kUTTypeImage,nil];
 
     picker.delegate = self;
     picker.editing = YES;
@@ -46,15 +46,13 @@
 
     picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     [self presentViewController:picker animated:YES completion:NULL];
-     }
-
+}
 
 // camera button
 - (IBAction)openCamera:(id)sender {
     NSLog(@"Camera button is pressed!");
     [self takePhoto];
 }
-
 
 // opens camera
 - (void)takePhoto {
@@ -85,10 +83,9 @@
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
-
+// Use the ML model to define the image
 - (void) processImage: (CIImage *)image {
     NSLog(@"in processImage!");
-//    [self.progressView startAnimating];
     MLModel *model = [[[MobileNetV2 alloc] init] model];
     VNCoreMLModel *myConvertedModel = [VNCoreMLModel modelForMLModel: model error:nil];
     VNCoreMLRequest *requestImageGuess = [[VNCoreMLRequest alloc] initWithModel: myConvertedModel completionHandler: (VNRequestCompletionHandler) ^(VNRequest *request, NSError *error){

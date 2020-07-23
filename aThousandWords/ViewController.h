@@ -10,14 +10,16 @@
 
 @interface ViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate >
 
+// Variables
 @property (retain, nonatomic) NSArray *results;
 
+// UI views
 @property (weak, nonatomic) IBOutlet UIButton *openCamera;
 @property (weak, nonatomic) IBOutlet UILabel *imageTitle;
 @property (weak, nonatomic) IBOutlet UIButton *openGallery;
 @property (weak, nonatomic) IBOutlet UIImageView *image;
 
-
+// functions
 - (IBAction)openGallery:(id)sender;
 - (void)takePhoto;
 - (void)imagePickerController:(UIImagePickerController *)picker;
